@@ -1,0 +1,21 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Hello PublicController!{% endblock %}
+
+{% block body %}
+<h1> Panier </h1>
+{% if items | length > 0 %}
+<h3>produit</h3>
+            {% for item in items %}
+                
+                    <p>{{ item.produit.name }}</p>
+                    <p>{{ item.quantity }}</p>
+                      <a href="{{ path('effacerpanier', {id: item.produit.id}) }}" class="btn btn-danger">Enlever</a> 
+                
+            {% endfor %}
+{% else %}
+<p>N'oublie pas de faire des achats</p>
+{% endif %}
+
+
+{% endblock %}

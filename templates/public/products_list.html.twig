@@ -1,0 +1,29 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Hello PublicController!{% endblock %}
+
+{% block body %}
+
+<h1> ProductList </h1>
+
+{% for produit in produits %}
+<h2> {{produit.name}} </h2>
+    <p> {{produit.description}} </p>
+    <img src="{{produit.picture}}" alt="Card image cap">
+    <p> {{produit.promo}} </p>
+    <p> {{produit.created | date('d/m/Y')}} </p>
+
+    		<a href="{{path('product_fiche', {'id' :produit.id})}}">
+			<button>
+				voir le produit
+			</button>
+            <a href="{{path('ajouterpanier', {'id' :produit.id})}}">
+            <button>
+				Ajouter au panier
+			</button>
+		</a>
+
+
+{% endfor %}
+
+{% endblock %}

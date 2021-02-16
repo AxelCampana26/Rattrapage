@@ -1,0 +1,17 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Hello PublicController!{% endblock %}
+
+{% block body %}
+{% for produit in produits %}
+{% if produit.promo %}
+<h2> {{produit.name}} </h2>
+    <p> {{produit.description}} </p>
+    <img src="{{produit.picture}}" alt="Card image cap">
+    <p> {{produit.promo}} </p>
+    <p> {{produit.created | date('d/m/Y')}} </p>
+
+{% endif %}
+
+{% endfor %}
+{% endblock %}

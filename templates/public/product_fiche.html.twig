@@ -1,0 +1,12 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Hello PublicController!{% endblock %}
+
+{% block body %}
+<h1> ProductFiche </h1>
+<h2> {{produit.name}} </h2>
+    <p> {{produit.description}} </p>
+    <img src="{{produit.picture}}" alt="Card image cap">
+    <p> {{produit.promo}} </p>
+    <p> {{produit.created | date('d/m/Y')}} </p>
+{% endblock %}
